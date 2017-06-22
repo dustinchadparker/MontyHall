@@ -17,3 +17,20 @@ MontyHall
  * opposed to the widely believed 50%.
  *
  */
+ 
+ 
+ 
+ Steps to getting this to run if you have a machine that isn't a Windows box :)
+ 1. Install the Sun JDK 1.8+
+ 1. Make sure your JAVA_HOME is set properly
+ 1. Install [SDKMan](http://sdkman.io/) 
+ 1. `sdk install maven`
+ 1. `mvn clean install`
+ 1. Profit!
+ 
+Steps to getting this to run if you have a machine that *is* a Windows box :)
+ 1. Install the Sun JDK 1.8+
+ 1. Make sure your JAVA_HOME is set properly
+ 1. "Install maven 3.3.x". This is a download, unzip, and path management problem
+ 1. `mvn clean install`
+ 1. Profit!

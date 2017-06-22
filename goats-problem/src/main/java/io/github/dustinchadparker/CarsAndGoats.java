@@ -1,6 +1,7 @@
-package montyProblem;
+package io.github.dustinchadparker;
 
 import java.util.ArrayList;
+import java.util.Objects;
 /**
  * CarsAndGoats is a simulation to prove the Monty Hall Problem, and to show other
  * alternatives to the problem, say, if there were even more cars, goats, and/or 
@@ -23,9 +24,10 @@ import java.util.ArrayList;
  */
 public class CarsAndGoats {
 
-	private int numCars = 1; // total number of cars
-	private int numGoats = 2; // total number of goats
-	private int numDoors = 3; // total number of doors
+  private final int numCars = 1; // total number of cars // FIXME Set things to
+                                 // `final` if it's possible
+  private final int numGoats = 2; // total number of goats
+  private final int numDoors; // total number of doors
 	private int goatCount = 0;
 	private int carCount = 0;
 	private int winCount = 0;
@@ -33,24 +35,32 @@ public class CarsAndGoats {
 	private int numRunCount = 1000000; // number of times to play game
 	private int numRuns = 0;
 	private int numHostDoorOpensCount = 1; // number of doors host opens
-	private ArrayList<Integer> list = new ArrayList<>(); // instantiates a list
+  private ArrayList<Integer> list = new ArrayList<>(); // instantiates a
+                                                              // list
 															// of variables
 
 	/**
 	 * An empty constructor.
 	 */
-	public CarsAndGoats() {
-
-		// int RANDOM = (int) (Math.random() * this.numDoors);
-		// this.list.add(RANDOM);
+  public CarsAndGoats() {
+    this(3);
 	}
+
+  // TODO Try more constructor-y things. It lets you make internal properties
+  // `final`
+  public CarsAndGoats(Integer doors) {
+    this.numDoors = Objects.requireNonNull(doors);
+    // int RANDOM = (int) (Math.random() * this.numDoors);
+    // this.list.add(RANDOM);
+  }
 
 	/**
 	 * Generates the numDoors doors, numGoats goats, and numCars cars. Then
 	 * randomly select one for the user and randomly select a door with a 
 	 * goat and remove it. 
 	 */
-	public void run() {
+  public void run() { // FIXME Never call any method .run() unless it's
+                      // implementing the Runnable interface
 
 		while (this.numRunCount > this.numRuns) {
 
