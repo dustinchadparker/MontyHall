@@ -1,10 +1,10 @@
+package io.github.dustinchadparker;
+import io.github.dustinchadparker.CarsAndGoats;
+
 /**
  * This is the main entry point to CarsAndGoats. This program is based upon
  * the famous Monty Hall Problem. See CarsAndGoats for more info.
  */
-package main;
-
-import montyProblem.CarsAndGoats;
 
 /**
  * This class is the main entry point of the program.
